@@ -15,6 +15,7 @@ class inicio extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
+
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
@@ -27,7 +28,7 @@ class inicio extends StatelessWidget {
                     style: TextStyle(
                       fontSize: 38,
                       fontWeight: FontWeight.w900,
-                      color: const Color.fromARGB(255, 250, 201, 22),
+                      color: Color.fromARGB(255, 250, 201, 22),
                       letterSpacing: 2,
                       shadows: [
                         Shadow(
@@ -39,7 +40,8 @@ class inicio extends StatelessWidget {
                       fontFamily: 'Lobster',
                     ),
                   ),
-                const SizedBox(height: 380),
+                const SizedBox(height: 390),
+
                 ElevatedButton(
                 onPressed:(){
                 },
@@ -49,7 +51,7 @@ class inicio extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                  borderRadius: BorderRadius.circular(30),
                 )),
-                child:const Text("Ir a menú",
+                child:const Text("Ver menú",
                 style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
