@@ -8,3 +8,6 @@ sealed class HomeState extends Equatable {
 }
 
 final class HomeInitial extends HomeState {}
+final class HomeLoadInprogress extends HomeState{}
+final class HomeLoadSucess extends HomeState{}
+final class HomeLoadFailure extends HomeState{}
