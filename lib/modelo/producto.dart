@@ -3,11 +3,13 @@ class Producto {
   final String categoria;
   final double precio;
   final String imagen;
+  final String ingredientes;
 
-Producto({
+  Producto({
     required this.nombre,
     required this.categoria,
     required this.precio,
-    required this.imagen
+    required this.imagen,
+    required this.ingredientes,
   });
 }

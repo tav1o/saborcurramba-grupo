@@ -10,7 +10,7 @@ class carta extends StatefulWidget {
 }
 
 class _cartaState extends State<carta> {
-  final Set<int> favoritos = {}; // Guardamos los índices favoritos
+  final Set<int> favoritos = {};
 
   @override
   Widget build(BuildContext context) {
@@ -45,136 +45,148 @@ class _cartaState extends State<carta> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(12.0),
-        child: menuCompleto.isEmpty
-            ? Center(
-                child: Text(
-                  'No hay productos disponibles en el menú.',
-                  style: GoogleFonts.poppins(
-                      fontSize: 16, color: Colors.grey[700]),
-                ),
-              )
-            : GridView.builder(
-                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 2,
-                  crossAxisSpacing: 12,
-                  mainAxisSpacing: 12,
-                  childAspectRatio: 0.75,
-                ),
-                itemCount: menuCompleto.length,
-                itemBuilder: (context, index) {
-                  final producto = menuCompleto[index];
-                  return GestureDetector(
-                    onTap: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Seleccionaste: ${producto.nombre}'),
-                          duration: const Duration(seconds: 2),
-                          backgroundColor: Colors.orange[700],
-                        ),
-                      );
-                    },
-                    child: TweenAnimationBuilder(
-                      duration: const Duration(milliseconds: 500),
-                      tween: Tween<double>(begin: 0.9, end: 1),
-                      curve: Curves.easeOutBack,
-                      builder: (context, scale, child) {
-                        return Transform.scale(
-                          scale: scale,
-                          child: child,
+        child:
+            menuCompleto.isEmpty
+                ? Center(
+                  child: Text(
+                    'No hay productos disponibles en el menú.',
+                    style: GoogleFonts.poppins(
+                      fontSize: 16,
+                      color: Colors.grey[700],
+                    ),
+                  ),
+                )
+                : GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 12,
+                    mainAxisSpacing: 12,
+                    childAspectRatio: 0.75,
+                  ),
+                  itemCount: menuCompleto.length,
+                  itemBuilder: (context, index) {
+                    final producto = menuCompleto[index];
+                    return GestureDetector(
+                      onTap: () {
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text('Seleccionaste: ${producto.nombre}'),
+                            duration: const Duration(seconds: 2),
+                            backgroundColor: Colors.orange[700],
+                          ),
                         );
                       },
-                      child: Card(
-                        color: Colors.white,
-                        elevation: 8,
-                        shadowColor: Colors.orangeAccent,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(16),
-                          side: BorderSide(
-                              color: Colors.orange.shade100, width: 1.5),
-                        ),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            Stack(
-                              children: [
-                                ClipRRect(
-                                  borderRadius: const BorderRadius.vertical(
-                                      top: Radius.circular(16)),
-                                  child: Image.asset(
-                                    producto.imagen,
-                                    fit: BoxFit.cover,
-                                    height: 120,
-                                    width: double.infinity,
-                                  ),
-                                ),
-                                Positioned(
-                                  top: 8,
-                                  right: 8,
-                                  child: IconButton(
-                                    icon: Icon(
-                                      favoritos.contains(index)
-                                          ? Icons.favorite
-                                          : Icons.favorite_border,
-                                      color: favoritos.contains(index)
-                                          ? Colors.red
-                                          : Colors.grey,
-                                    ),
-                                    onPressed: () {
-                                      setState(() {
-                                        if (favoritos.contains(index)) {
-                                          favoritos.remove(index);
-                                        } else {
-                                          favoritos.add(index);
-                                        }
-                                      });
-                                    },
-                                  ),
-                                ),
-                              ],
+                      child: TweenAnimationBuilder(
+                        duration: const Duration(milliseconds: 500),
+                        tween: Tween<double>(begin: 0.9, end: 1),
+                        curve: Curves.easeOutBack,
+                        builder: (context, scale, child) {
+                          return Transform.scale(scale: scale, child: child);
+                        },
+                        child: Card(
+                          color: Colors.white,
+                          elevation: 8,
+                          shadowColor: Colors.orangeAccent,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(16),
+                            side: BorderSide(
+                              color: Colors.orange.shade100,
+                              width: 1.5,
                             ),
-                            Expanded(
-                              child: Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    Text(
-                                      producto.nombre,
-                                      style: GoogleFonts.poppins(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                      ),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Stack(
+                                children: [
+                                  ClipRRect(
+                                    borderRadius: const BorderRadius.vertical(
+                                      top: Radius.circular(16),
                                     ),
-                                    Text(
-                                      producto.categoria,
-                                      style: GoogleFonts.poppins(
-                                        color: Colors.grey[600],
-                                        fontSize: 14,
-                                      ),
+                                    child: Image.asset(
+                                      producto.imagen,
+                                      fit: BoxFit.cover,
+                                      height: 120,
+                                      width: double.infinity,
                                     ),
-                                    Text(
-                                      '\$${producto.precio.toStringAsFixed(2)}',
-                                      style: GoogleFonts.poppins(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.orange[700],
-                                        fontSize: 16,
+                                  ),
+                                  Positioned(
+                                    top: 8,
+                                    right: 8,
+                                    child: IconButton(
+                                      icon: Icon(
+                                        favoritos.contains(index)
+                                            ? Icons.favorite
+                                            : Icons.favorite_border,
+                                        color:
+                                            favoritos.contains(index)
+                                                ? Colors.red
+                                                : Colors.grey,
                                       ),
+                                      onPressed: () {
+                                        setState(() {
+                                          if (favoritos.contains(index)) {
+                                            favoritos.remove(index);
+                                          } else {
+                                            favoritos.add(index);
+                                          }
+                                        });
+                                      },
                                     ),
-                                  ],
+                                  ),
+                                ],
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text(
+                                        producto.nombre,
+                                        style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 16,
+                                        ),
+                                        maxLines: 1,
+                                        overflow: TextOverflow.ellipsis,
+                                      ),
+                                      Text(
+                                        producto.categoria,
+                                        style: GoogleFonts.poppins(
+                                          color: Colors.grey[600],
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      Text(
+                                        '\$${producto.precio.toStringAsFixed(2)}',
+                                        style: GoogleFonts.poppins(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.orange[700],
+                                          fontSize: 16,
+                                        ),
+                                      ),
+                                      Text(
+                                        producto.ingredientes,
+                                        style: GoogleFonts.poppins(
+                                          color: Colors.grey[600],
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                       ),
-                    ),
-                  );
-                },
-              ),
+                    );
+                  },
+                ),
       ),
     );
   }
