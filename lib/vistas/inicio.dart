@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:saborcurramba/bloc/home_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:saborcurramba/main.dart'; 
+
+void main(){
+  runApp(MyApp());
+}
 
 class inicio extends StatelessWidget {
   const inicio({super.key});
@@ -15,7 +23,6 @@ class inicio extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-
           Align(
             alignment: Alignment.topCenter,
             child: Padding(
@@ -23,51 +30,48 @@ class inicio extends StatelessWidget {
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  const Text(
+                  Text(
                     "Sabor Curramba",
-                    style: TextStyle(
-                      fontSize: 38,
+                    style: GoogleFonts.lobster( 
+                      fontSize: 40,
                       fontWeight: FontWeight.w900,
-                      color: Color.fromARGB(255, 250, 201, 22),
+                      color: const Color.fromARGB(255, 250, 201, 22),
                       letterSpacing: 2,
-                      shadows: [
+                      shadows: const [
                         Shadow(
-                          offset: Offset(2,2),
+                          offset: Offset(2, 2),
                           blurRadius: 4.0,
-                          color:Colors.black54
+                          color: Colors.black54,
                         )
                       ],
-                      fontFamily: 'Lobster',
                     ),
                   ),
-                const SizedBox(height: 390),
+                  const SizedBox(height: 390),
 
-                ElevatedButton(
-                onPressed:(){
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:const Color.fromARGB(255, 250, 201, 22),
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
-                  shape: RoundedRectangleBorder(
-                 borderRadius: BorderRadius.circular(30),
-                )),
-                child:const Text("Ver menú",
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
-                ),
-
-                )
-
-              )],
-
+                  ElevatedButton(
+                    onPressed: () {
+                      context.read<HomeBloc>().add(HomeSearchPressed());
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor:
+                          const Color.fromARGB(255, 250, 201, 22),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 15),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                    ),
+                    child: Text(
+                      "Ver menú",
+                      style: GoogleFonts.poppins(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ),
-          Center(
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(20),
-              child: SizedBox(),
             ),
           ),
         ],

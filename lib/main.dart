@@ -7,6 +7,10 @@ import 'vistas/carta.dart';
 import 'vistas/falla.dart';
 import 'vistas/inicio.dart';
 
+void main(){
+  runApp(MyApp());
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
