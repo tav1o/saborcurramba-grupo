@@ -2,6 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 
 import 'package:http/http.dart' as http;
+import 'package:saborcurramba/modelo/producto.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
