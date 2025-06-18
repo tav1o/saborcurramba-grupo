@@ -4,6 +4,7 @@ class Producto {
   final double precio;
   final String imagen;
   final String ingredientes;
+  
 
   Producto({
     required this.nombre,
