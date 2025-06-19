@@ -38,14 +38,14 @@ final List<Producto> menuCompleto = [
     nombre: 'Perro italiano',
     categoria: 'Perros calientes 🌭',
     precio: 5.99,
-    imagen: "assets/menu/hamburguesa.png",
+    imagen: "assets/menu/perro1.jpg",
     ingredientes: "salchicha, queso, jamón, papitas chongo, lechuga, salsas",
   ),
   Producto(
     nombre: 'Maxiperro',
     categoria: 'Perros calientes 🌭',
     precio: 7.99,
-    imagen: "assets/menu/doble.png",
+    imagen: "assets/menu/perro2.jpg",
     ingredientes:
         "la salchicha mas larga que el pan, queso costeño, papitas chongo, salsas",
   ),
