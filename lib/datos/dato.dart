@@ -4,14 +4,14 @@ final List<Producto> menuCompleto = [
   // Pizzas
   Producto(
     nombre: 'Pizza Margarita',
-    categoria: 'Pizzas',
+    categoria: 'Pizzas 🍕',
     precio: 12.99,
     imagen: "assets/menu/margarita.png",
     ingredientes: "queso mozarella, albahaca fresca",
   ),
   Producto(
     nombre: 'Pizza hawaiana',
-    categoria: 'Pizzas',
+    categoria: 'Pizzas 🍕',
     precio: 14.99,
     imagen: "assets/menu/hawaiana.png",
     ingredientes: "jamón, piña, queso mozarella",
@@ -20,14 +20,14 @@ final List<Producto> menuCompleto = [
   // Hamburguesa
   Producto(
     nombre: 'Hamburguesa Clásica',
-    categoria: 'Hamburguesas',
+    categoria: 'Hamburguesas 🍔',
     precio: 8.99,
     imagen: "assets/menu/hamburguesa.png",
     ingredientes: "carne de res, lechuga, tomate, cebolla, queso, tocineta",
   ),
   Producto(
     nombre: 'Hamburguesa BBQ',
-    categoria: 'Hamburguesas',
+    categoria: 'Hamburguesas 🍔',
     precio: 10.99,
     imagen: "assets/menu/doble.png",
     ingredientes:
@@ -54,14 +54,14 @@ final List<Producto> menuCompleto = [
   // Bebidas
   Producto(
     nombre: 'coca cola',
-    categoria: 'Bebidas',
+    categoria: 'Bebidas 🥤',
     precio: 2.50,
     imagen: "assets/menu/coca cola.png",
     ingredientes: "agua, azúcar, colorantes",
   ),
   Producto(
     nombre: 'Jugo hit',
-    categoria: 'Bebidas',
+    categoria: 'Bebidas 🥤',
     precio: 3.50,
     imagen: "assets/menu/jugo.png",
     ingredientes: "agua, azúcar, colorante, sabor a frutas",
