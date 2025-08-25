@@ -1,37 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:saborcurramba/bloc/home_bloc.dart';
+import 'package:saborcurramba/vistas_cubit/home_screms.dart';
+ // Ajusta el nombre si es un typo
 
-import 'vistas/cargando.dart';
-import 'vistas/carta.dart';
-import 'vistas/falla.dart';
-import 'vistas/inicio.dart';
-
-void main(){
+void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => HomeBloc(),
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Sabor Curramba',
-        home: BlocBuilder<HomeBloc, HomeState>(
-          builder: (context, state) {
-            if (state is HomeLoadSucess) {
-              return carta();
-            } else if (state is HomeLoadInprogress) {
-              return cargando();
-            } else if (state is HomeLoadFailure) {
-              return falla();
-            }
-            return inicio();
-          },
-        ),
-      ),
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Sabor Curramba',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: HomeScreen(), 
     );
   }
 }
