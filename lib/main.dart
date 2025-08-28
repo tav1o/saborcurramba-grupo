@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:saborcurramba/vistas_cubit/home_screms.dart';
- // Ajusta el nombre si es un typo
+ 
 
 void main() {
   runApp(MyApp());
