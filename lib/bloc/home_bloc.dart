@@ -12,7 +12,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     on<LoadHamburguesasEvent>((event, emit) async {
       emit(HomeLoadInprogress());
       try {
-        final hamburguesas = menuCompleto.where((producto) => producto.categoria == 'Hamburguesas').toList();
+        final hamburguesas = menuCompleto.where((producto) => producto.categoria == 'Hamburguesas 🍔').toList();
         emit(HomeLoadSuccess(hamburguesas));
       } catch (_) {
         emit(HomeLoadFailure());

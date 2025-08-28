@@ -1,9 +1,9 @@
-abstract class HomeState {}
+abstract class HomeStateCubit {}
 
-class HomeInitial extends HomeState {}
+class HomeInitial extends HomeStateCubit {}
 
-class HomeLoadInProgress extends HomeState {}
+class HomeLoadInProgress extends HomeStateCubit {}
 
-class HomeLoadSuccess extends HomeState {}
+class HomeLoadSuccess extends HomeStateCubit {}
 
-class HomeLoadFailure extends HomeState {}
+class HomeLoadFailure extends HomeStateCubit {}

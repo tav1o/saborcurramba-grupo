@@ -6,6 +6,8 @@ import '../bloc/home_bloc.dart';
 
 
 class BlocTab extends StatelessWidget {
+  const BlocTab({super.key});
+
 
 
   @override

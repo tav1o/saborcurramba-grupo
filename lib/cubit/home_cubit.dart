@@ -7,7 +7,7 @@ class HomeCubit extends Cubit<List<Producto>> {
   HomeCubit() : super([]);
 
   void loadPizzas() {
-    final pizzas = menuCompleto.where((producto) => producto.categoria == 'Pizzas').toList();
+    final pizzas = menuCompleto.where((producto) => producto.categoria == 'Pizzas 🍕').toList();
     emit(pizzas);
   }
 }

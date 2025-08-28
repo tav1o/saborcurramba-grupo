@@ -7,6 +7,8 @@ import 'bloc_tab.dart';
 import 'cubit_tab.dart';
 
 class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -24,11 +26,11 @@ class HomeScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             BlocProvider(
-              create: (_) => HomeBloc()..add(LoadHamburguesasEvent()),
+              create: (_) => HomeBloc(),
               child: BlocTab(),
             ),
             BlocProvider(
-              create: (_) => HomeCubit()..loadPizzas(),  
+              create: (_) => HomeCubit(),  
               child: CubitTab(),
             ),
           ],
